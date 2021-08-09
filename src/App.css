@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  display:  flex;
+  justify-content: space-evenly;
+  background-color: rgb(255, 109, 51);
+}
+.App h1 {
+  color: #fff;
 }
 
 .App-logo {
