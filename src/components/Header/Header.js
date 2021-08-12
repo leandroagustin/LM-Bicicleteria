@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import { Icon } from 'semantic-ui-react'
+import CartWidget from '../CartWidget/CartWidget';
 
 const Header = (props) => {
   return (
@@ -22,7 +22,7 @@ const Header = (props) => {
         <li className="listas">
           <a>Contacto</a>
         </li>
-        <Icon name='cart' size='large' circular inverted color='orange' />
+        <CartWidget/>
       </nav>
     </div>
   );

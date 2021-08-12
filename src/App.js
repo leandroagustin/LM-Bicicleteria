@@ -5,11 +5,13 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import "./components/Header/Header.css";
 import CardComponent from "./components/CardComponent/CardComponent";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header title="LM Bicicleteria" />
+        <ItemListContainer title="¡Bienvenidos mi tienda online!" />
         <div className="CardContainer">
           <CardComponent
             name="Megamo Kinetic 2021"

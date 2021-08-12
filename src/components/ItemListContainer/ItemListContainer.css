@@ -1,0 +1,7 @@
+.greetingContainer h1{
+    color: rgb(255, 109, 51);
+    background-color: #fff;
+    top: 100px;
+    text-align: center;
+    padding: 15px 0;
+}
