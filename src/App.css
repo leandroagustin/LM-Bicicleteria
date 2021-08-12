@@ -1,7 +1,6 @@
 .App {
   display:  flex;
-  justify-content: space-evenly;
-  background-color: rgb(255, 109, 51);
+  flex-direction: column;
 }
 .App h1 {
   color: #fff;
@@ -40,4 +39,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* Cards */
+.CardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
