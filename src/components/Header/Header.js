@@ -8,7 +8,7 @@ const Header = (props) => {
       <h1>{props.title}</h1>
       <nav className="NavBar">
         <li>
-          <a href="../../public/index.html">Inicio</a>
+          <a href="../../public/index.html">Home</a>
         </li>
         <li className="listas">
           <a>Productos</a>

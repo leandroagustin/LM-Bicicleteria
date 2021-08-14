@@ -18,7 +18,7 @@ class App extends Component {
             description="Bicicleta de aluminio de asistencia eléctrica al pedaleo Megamo Kinetic, con batería integrada en el cuadro de 418 Wh, horquilla de suspensión Suntour de 100 mm de recorrido, transmisión Shimano Altus de 8 velocidades y frenos de disco hidráulicos shimano para uso Recreativo."
             img="https://cdn.mammothbikes.com/ProductImages/list/424683.png"
           />
-          <CardComponent
+          {/* <CardComponent
             name="Conor Java 29 2021"
             description="Bicicleta de aluminio Conor Java 29, de asistencia eléctrica al pedaleo con batería de 504 Wh, y transmisión de 9 velocidades para uso Recreativo."
             img="https://cdn.mammothbikes.com/ProductImages/list/426970.jpeg"
@@ -47,7 +47,7 @@ class App extends Component {
             name="Conor Nepal E-Mtb 27,5 2022"
             description="Bicicleta de asistencia eléctrica al pedaleo Nepal E-Mtb 27,5, viene equipada con Motor BAFANG RM 250 y batería dede 504 Wh, para uso Recreativo."
             img="https://cdn.mammothbikes.com/ProductImages/list/472025.jpg"
-          />
+          /> */}
         </div>
       </div>
     );
