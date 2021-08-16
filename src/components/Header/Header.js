@@ -11,16 +11,16 @@ const Header = (props) => {
           <a href="../../public/index.html">Home</a>
         </li>
         <li className="listas">
-          <a>Productos</a>
+          <a href="#">Productos</a>
         </li>
         <li className="listas">
-          <a>Sobre Nosotros</a>
+          <a href="#">Sobre Nosotros</a>
         </li>
         <li className="listas">
-          <a>Taller</a>
+          <a href="#">Taller</a>
         </li>
         <li className="listas">
-          <a>Contacto</a>
+          <a href="#">Contacto</a>
         </li>
         <CartWidget/>
       </nav>
