@@ -1,22 +1,24 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
+import './Item.css';
 
 const item = ({ array }) => (
-
-    <div className='CardContainer'>
+        <div className='CardContainer'>
         <Card>
-            <Image src={array.avatar_url} wrapped ui='false' />
-            <Card.Content>
-                <Card.Header>{array.login}</Card.Header>
+            <Image src={array.pictureUrl} wrapped ui='false' />
+            <Card.Content  className='card-Content'>
+                <Card.Header>{array.title}</Card.Header>
                 <Card.Meta>
                     {array.id}
                 </Card.Meta>
+                <Card.Description className='card-Description'>
+                    <span>Precio: ${array.price}</span>
+                </Card.Description>
                 <Card.Description>
-                    <p>{array.html_url}</p>
+                    <p>{array.description}</p>
                 </Card.Description>
             </Card.Content>
         </Card></div>
-
-)
+    )
 
 export default item;

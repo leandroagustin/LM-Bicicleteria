@@ -1,0 +1,15 @@
+.card {
+    margin: 10px;
+    height:fit-content;
+    max-height: 440px;
+}
+
+.card-Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-Description {
+    margin: 10px;
+    font-weight: 200;
+}

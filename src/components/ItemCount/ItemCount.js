@@ -32,9 +32,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <div className="btnContainer">
             <h1>Megamo Kinetic 2021</h1>
             <p>Stock disponible: {nuevoStock}</p>
-            <button onClick={Incrementar}>Agregar +</button>
+            <button disabled={bike === Number(stock)} onClick={Incrementar}>Agregar +</button>
             <p>Cantidad:{bike}</p>
-            <button onClick={Decrementar}>Quitar -</button>
+            <button disabled={bike === 1} onClick={Decrementar}>Quitar -</button>
             <button onClick={onAdd} className="btnCarrito">Agregar al Carrito</button>
         </div>
     );
