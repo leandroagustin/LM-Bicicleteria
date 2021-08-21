@@ -10,10 +10,11 @@ const ItemDetailContainer = ({ item }) => {
                 <div>
                     <h1>{item.title}</h1>
                     <img src={item.pictureUrl} alt="Conor Java"></img>
-                    <p><b>Descricion:</b> {item.description}</p>
+                    <p><b>Descripcion:</b> {item.descriptionSecondary}</p>
+                    <p><b>Categoria:{item.category}</b></p>
                 </div>
                 <div>
-                    <span><b>Precio: $ {item.price}</b></span>
+                    <span><b>Precio: € {item.price}</b></span>
                     <ItemCount stock="5" initial="0"/>
                 </div>
             </div>

@@ -6,7 +6,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const [nuevoStock, setNuevoStock] = useState(stock);  
   
     const Decrementar = () => {
-        if (bike > 1) {
+        if (bike > 0) {
             setBike(bike - 1);
             setNuevoStock(nuevoStock + 1);
         }
@@ -22,19 +22,18 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
       if (bike > 0) {
           setBike(bike - nuevoStock);
-          setBike(bike - 1)
-          console.log(`Id:${bike}`);
+          setBike(0)
+          console.log(`Cantidad:${bike}`);
         }
         
     }
 
     return (
         <div className="btnContainer">
-            <h1>Megamo Kinetic 2021</h1>
             <p>Stock disponible: {nuevoStock}</p>
             <button disabled={bike === Number(stock)} onClick={Incrementar}>Agregar +</button>
             <p>Cantidad:{bike}</p>
-            <button disabled={bike === 1} onClick={Decrementar}>Quitar -</button>
+            <button disabled={bike === 0} onClick={Decrementar}>Quitar -</button>
             <button onClick={onAdd} className="btnCarrito">Agregar al Carrito</button>
         </div>
     );

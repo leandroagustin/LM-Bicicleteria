@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
             {IsLoading === false ? (
                 <div>
                     {bici.map((e) => {
-                        return <ItemDetail key={e.id} item={e} />
+                        return <ItemDetail key={e.id} item={e} title={e.title}/>
                     })}
                 </div>
             ) :

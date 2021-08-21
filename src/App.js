@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
-
 //components
 import Header from "./components/Header/Header";
 import "./components/Header/Header.css";
 // import CardComponent from "./components/CardComponent/CardComponent";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-class App extends Component {
-  render() {
+
+const App = () => {
     return (
       <div className="App">
         <Header title="LM Bicicleteria" />
@@ -52,5 +51,4 @@ class App extends Component {
       </div>
     );
   }
-}
 export default App;
