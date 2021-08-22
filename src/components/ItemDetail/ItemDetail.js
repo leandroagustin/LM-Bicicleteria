@@ -3,10 +3,10 @@ import ItemCount from '../ItemCount/ItemCount';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ItemDetail.css'
 
-const ItemDetailContainer = ({ item }) => {
+const ItemDetail = ({ item }) => {
     return (
         <>
-            <div className="itemDetailContainer">
+            <div className="itemDetail">
                 <div>
                     <h1>{item.title}</h1>
                     <img src={item.pictureUrl} alt="Conor Java"></img>
@@ -15,11 +15,11 @@ const ItemDetailContainer = ({ item }) => {
                 </div>
                 <div>
                     <span><b>Precio: € {item.price}</b></span>
-                    <ItemCount stock="5" initial="0"/>
+                    <ItemCount stock="5" initial="0" />
                 </div>
             </div>
         </>
     )
 };
 
-export default ItemDetailContainer;
+export default ItemDetail;

@@ -1,8 +1,8 @@
 import React from 'react'
 import './ItemListContainer.css'
 // import ItemCount from '../ItemCount/ItemCount';
-// import ItemList from '../ItemList.js/ItemList';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import ItemList from '../ItemList.js/ItemList';
+// import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 // import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemListContainer = ({ title }) => {
@@ -10,11 +10,10 @@ const ItemListContainer = ({ title }) => {
         <>
             <div className="greetingContainer">
                 <h1>{title}</h1>
-                {/* <ItemCount stock="5" initial="0" /> */}
             </div>
             <div className='ItemList'>
-                {/* <ItemList /> */}
-                <ItemDetailContainer/>
+                <ItemList />
+                {/* <ItemDetailContainer/> */}
             </div>
         </>
     )
