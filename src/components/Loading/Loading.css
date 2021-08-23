@@ -1,7 +1,7 @@
 
 .loading-spinner {
     align-self: center;
-    background-color: rgb(255, 109, 51);
+    background-color: rgb(0, 0, 0);
     width: 5vw;
     height: 5vw;
     margin-top: 25vh;
@@ -13,6 +13,6 @@
 }
 
 .spinner-border{
-  color: rgb(253, 198, 177);
+  color: rgb(255, 109, 51);
   font-size: 20px;
 }

@@ -3,7 +3,6 @@ import { Card, Image } from 'semantic-ui-react';
 import './Item.css';
 
 const item = ({ array }) => (
-        <div className='CardContainer'>
         <Card>
             <Image src={array.pictureUrl} wrapped ui='false' />
             <Card.Content  className='card-Content'>
@@ -18,7 +17,7 @@ const item = ({ array }) => (
                     <p>{array.description}</p>
                 </Card.Description>
             </Card.Content>
-        </Card></div>
+        </Card>
     )
 
 export default item;

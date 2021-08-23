@@ -12,16 +12,10 @@
     padding: 15px 0;
 }
 
-.ItemList{
+.itemListContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: flex-start;
     flex-wrap: wrap;
-}
-
-.ItemList h2 {
-    color: rgb(255, 109, 51);
-    padding-top: 100px;
-    font-size: 30px;
+    margin: 10px;
 }

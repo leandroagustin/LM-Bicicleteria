@@ -1,9 +1,6 @@
 import React from 'react'
-import './ItemListContainer.css'
-// import ItemCount from '../ItemCount/ItemCount';
-import ItemList from '../ItemList.js/ItemList';
-// import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
-// import ItemDetail from '../ItemDetail/ItemDetail';
+import './ItemListContainer.css';
+import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = ({ title }) => {
     return (
@@ -11,9 +8,8 @@ const ItemListContainer = ({ title }) => {
             <div className="greetingContainer">
                 <h1>{title}</h1>
             </div>
-            <div className='ItemList'>
+            <div className='itemListContainer'>
                 <ItemList />
-                {/* <ItemDetailContainer/> */}
             </div>
         </>
     )

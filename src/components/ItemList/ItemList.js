@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Item from '../Item.js/Item';
+import Item from '../Item/Item';
+import './ItemList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 //Spinner
@@ -18,22 +19,23 @@ const ItemList = () => {
             setIsLoading(false);
         }, 2000);
     }, []);
- console.log(IsLoading);
+
     return (
-        <> {IsLoading === false ? (
-            <div>
-                {bici.map((e) => {
-                    return (
-                        <div key={e.id} className="">
-                            <Link to={`/detail/${e.id}`}>
-                                <Item key={e.id} array={e} title={e.title} />
-                            </Link>
-                        </div>
-                    );
-                })}
-            </div>
-        ) :
-            <Loading />}
+        <>
+            {IsLoading === false ? (
+                <div className='divCardContainer'>
+                    {bici.map((e) => {
+                        return (
+                            <div key={e.id}>
+                                <Link to={`/Item/${e.id}`}>
+                                    <Item array={e} />
+                                </Link>
+                            </div>
+                        );
+                    })}
+                </div>
+            ) :
+                <Loading />}
         </>
     );
 };

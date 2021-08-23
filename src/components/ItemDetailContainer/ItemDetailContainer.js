@@ -3,21 +3,19 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { useEffect, useState } from "react";
 import Loading from "../Loading/Loading";
 import axios from "axios";
-//React-Router-DOM
-import { Link } from "react-router-dom";
 
-const ItemDetailContainer = () => {
-    const [bici, SetBicis] = useState([]);
+const ItemDetailContainer = ({match}) => {
+    let id = match.params.data;
+    const [bici, SetBici] = useState([]);
     const [IsLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        axios(
-            "https://my-json-server.typicode.com/leandroagustin/api.json/array"
-        ).then((res) => SetBicis(res.data));
 
+    useEffect(() => {
+        axios(`https://my-json-server.typicode.com/leandroagustin/api.json/array${id}`).then((res) =>
+            SetBici(res.data))
         setTimeout(() => {
             setIsLoading(false);
-        }, 2000);
-    }, []);
+        }, 1000);
+    }, [id]);
 
     return (
         <>
@@ -25,11 +23,7 @@ const ItemDetailContainer = () => {
                 <div>
                     {bici.map((e) => {
                         return (
-                            <div key={e.id} className="">
-                                <Link to={`/detail/${e.id}`}>
-                                    <ItemDetail key={e.id} item={e} title={e.title} />
-                                </Link>
-                            </div>
+                            <ItemDetail key={e.id} item={e} />
                         );
                     })}
                 </div>
