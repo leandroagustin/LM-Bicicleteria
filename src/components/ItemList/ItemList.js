@@ -6,25 +6,27 @@ import axios from 'axios';
 //Spinner
 import Loading from '../Loading/Loading';
 //React-Router-DOM
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const ItemList = () => {
-    const [bici, SetBicis] = useState([]);
+    const { categoryId } = useParams()
+    const [products, SetProducts] = useState([]);
     const [IsLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        axios(
-            "https://my-json-server.typicode.com/leandroagustin/api.json/array"
-        ).then((res) => SetBicis(res.data));
-
+        axios("https://fakestoreapi.com/products/").then((res) => {
+            categoryId
+                ? SetProducts(res.data.filter((e) => e.category === categoryId))
+                : SetProducts(res.data);
+        });
         setTimeout(() => {
             setIsLoading(false);
         }, 2000);
-    }, []);
+    }, [categoryId]);
 
     return (
         <>
             {IsLoading === false ? (
                 <div className='divCardContainer'>
-                    {bici.map((e) => {
+                    {products.map((e) => {
                         return (
                             <div key={e.id}>
                                 <Link to={`/Item/${e.id}`}>

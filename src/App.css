@@ -1,6 +1,8 @@
 .App {
   display:  flex;
   flex-direction: column;
+  background: rgb(255,109,51);
+  background: linear-gradient(180deg, rgba(255,109,51,1) 0%, rgba(255,255,255,1) 100%);
 }
 /* Cards */
 .CardContainer {

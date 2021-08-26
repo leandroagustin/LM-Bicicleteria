@@ -5,7 +5,7 @@
     padding: 15px;
     font-size: 20px;
     background-color: #fff;
-    border: 6px solid rgb(255, 109, 51);
+    border: 2px solid rgb(255, 109, 51);
     border-radius: 4px;
     height: 400px;
     width: 300px;
@@ -20,4 +20,11 @@
     border: none;
     background-color: rgb(255, 109, 51);
     color: #fff;
+    border: 1px solid rgb(255, 109, 51);
+    transition: all 0.7s;
+}
+.btnCarrito:hover {
+    background-color: #fff;
+    color: rgb(255, 109, 51);
+    border: 1px solid rgb(255, 109, 51);
 }

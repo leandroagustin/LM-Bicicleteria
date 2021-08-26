@@ -1,8 +1,22 @@
 .itemDetail {
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content:center;
     margin: 20px;
     background-color: rgb(253, 198, 177);
     padding: 20px;
+}
+
+.itemDeailImg{
+    border: 2px solid rgb(255, 109, 51);
+    height: 600px;
+    width: 400px;
+}
+
+.itemDetailcontent {
+
+}
+
+.itemDetailItemCount{
+
 }

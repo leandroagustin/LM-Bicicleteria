@@ -3,18 +3,18 @@ import ItemCount from '../ItemCount/ItemCount';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ItemDetail.css'
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ Item }) => {
     return (
         <>
             <div className="itemDetail">
-                <div>
-                    <h1>{item.title}</h1>
-                    <img src={item.pictureUrl} alt="Conor Java"></img>
-                    <p><b>Descripcion:</b> {item.descriptionSecondary}</p>
-                    <p><b>Categoria:{item.category}</b></p>
+                <div className='itemDetailcontent'>
+                    <h1>{Item.title}</h1>
+                    <img className='itemDeailImg' src={Item.image} alt="Conor Java"></img>
+                    <p><b>Descripcion:</b> {Item.description}</p>
+                    <p><b>Categoria:{Item.category}</b></p>
                 </div>
-                <div>
-                    <span><b>Precio: € {item.price}</b></span>
+                <div className='itemDetailItemCount'>
+                    <span><b>Precio: € {Item.price}</b></span>
                     <ItemCount stock="5" initial="0" />
                 </div>
             </div>

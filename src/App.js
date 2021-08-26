@@ -3,6 +3,7 @@ import "./App.css";
 //components
 import NavBar from "./components/NavBar/NavBar";
 import "./components/NavBar/NavBar.css";
+import Footer from "./views/Footer/Footer";
 //Views
 import Home from "./views/Home/Home";
 import Contact from "./views/Contact/Contact";
@@ -11,6 +12,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 //
 //React-Router-DOM
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
 const App = () => {
     return (
@@ -18,11 +20,13 @@ const App = () => {
         <div className='App'>
         <NavBar/>
           <Switch>
-            <Route path='/' exact component={Home}/>
-            <Route path='/Contact' component={Contact}/>
-            <Route path='/About' component={About} />
+            <Route path='/' exact component={Home} />
+            <Route path='/Category/:categoryId' component={ItemListContainer} />
             <Route path='/Item/:id' component={ItemDetailContainer} />
+            <Route path='/About' component={About} />
+            <Route path='/Contact' component={Contact} />
           </Switch>
+          <Footer />
       </div>
       </Router>
     );

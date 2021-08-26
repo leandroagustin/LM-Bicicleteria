@@ -1,6 +1,8 @@
 import React from 'react'
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+//Semantic UI
+import { Button, Icon } from 'semantic-ui-react'
 //Bootstrap
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,7 +11,7 @@ const NavBar = () => {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='navBarContainer'>
-      <Navbar.Brand to="/" className='mx-5'>BicleteriaLAM</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/" className='brand mx-5'>TopMega</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -17,16 +19,12 @@ const NavBar = () => {
           style={{ maxHeight: '100px', fontSize: '20px'}}
           navbarScroll
         >
-          <Nav.Link
-            className='mx-3'
-            as={Link}
-            to="/">Home
-          </Nav.Link>
           <NavDropdown title="Productos" id="navbarScrollingDropdown" className='mx-3'>
-            <NavDropdown.Item to="#" disabled className='navDropdown'>Categorias</NavDropdown.Item>
-            <NavDropdown.Item to="#action4" className='navDropdown'>MTB</NavDropdown.Item>
-            <NavDropdown.Item to="#action5" className='navDropdown'>Electricas</NavDropdown.Item>
-            <NavDropdown.Item to="#action5" className='navDropdown'>De Paseos</NavDropdown.Item>
+            <NavDropdown.Item to="#" as={Link} disabled className='navDropdown'>Categorias</NavDropdown.Item>
+            <NavDropdown.Item to="/Category/electronics" as={Link} className='navDropdown'>electronics</NavDropdown.Item>
+            <NavDropdown.Item to="/Category/jewelery" as={Link} className='navDropdown'>jewelery</NavDropdown.Item>
+            <NavDropdown.Item to="/Category/men's clothing" as={Link} className='navDropdown'>men's clothing</NavDropdown.Item>
+            <NavDropdown.Item to="/Category/women's clothing" as={Link} className='navDropdown'>women's clothing</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link
             as={Link}
@@ -38,6 +36,12 @@ const NavBar = () => {
             to="/Contact"
             className='mx-3'>Contact
           </Nav.Link>
+          <Button animated='vertical'>
+            <Button.Content hidden>Carro</Button.Content>
+            <Button.Content visible>
+              <Icon name='shop' />
+            </Button.Content>
+          </Button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
