@@ -10,11 +10,11 @@ const ItemDetail = ({ Item }) => {
                 <div className='itemDetailcontent'>
                     <h1>{Item.title}</h1>
                     <img className='itemDeailImg' src={Item.image} alt="Conor Java"></img>
-                    <p><b>Descripcion:</b> {Item.description}</p>
-                    <p><b>Categoria:{Item.category}</b></p>
+                    <p><b>Descripcion: </b> {Item.description}</p>
+                    <p><b>Categoria: {Item.category}</b></p>
+                    <span><b>Precio: € {Item.price}</b></span>
                 </div>
                 <div className='itemDetailItemCount'>
-                    <span><b>Precio: € {Item.price}</b></span>
                     <ItemCount stock="5" initial="0" />
                 </div>
             </div>

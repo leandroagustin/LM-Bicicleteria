@@ -8,15 +8,21 @@
 }
 
 .itemDeailImg{
-    border: 2px solid rgb(255, 109, 51);
-    height: 600px;
+    border: 1px solid rgb(255, 109, 51);
+    height: 500px;
     width: 400px;
 }
 
 .itemDetailcontent {
-
+    width: 600px;
 }
 
-.itemDetailItemCount{
+.itemDetailcontent span b {
+    font-family: Verdana;
+    border-bottom: 3px solid rgb(255, 109, 51);
+    border-radius: 5px;
+}
 
+.itemDetailcontent p {
+    font-family: Verdana;
 }

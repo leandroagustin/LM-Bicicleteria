@@ -5,10 +5,11 @@
     padding: 15px;
     font-size: 20px;
     background-color: #fff;
-    border: 2px solid rgb(255, 109, 51);
+    border: 1px solid rgb(255, 109, 51);
     border-radius: 4px;
     height: 400px;
     width: 300px;
+    margin-top: 80px;
 }
 
 .btnContainer p {

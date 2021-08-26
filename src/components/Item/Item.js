@@ -4,9 +4,9 @@ import './Item.css';
 
 const Item = ({ array }) => (
         <Card>
-        <Image src={array.image} wrapped ui='false' />
+        <Image className='cardImage' src={array.image} />
             <Card.Content  className='card-Content'>
-            <Card.Header>{array.title}</Card.Header>
+            <Card.Header className='CardHeader'>{array.title}</Card.Header>
                 <Card.Description className='card-Description'>
                 <span>{array.category}</span>
                 </Card.Description>

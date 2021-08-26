@@ -1,17 +1,20 @@
 .card {
     margin: 10px;
-    height:fit-content;
-    max-height: 440px;
+    height: 450px;
+    width:300px
 }
-
-.card-Content {
+.cardImage {
+    height: 300px;
+}
+.card .card-Content {
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    height: 500px;
+    height: fit-content;
 }
 .card-Description {
     margin: 10px;
     font-weight: 200;
+    height: fit-content
 }
 

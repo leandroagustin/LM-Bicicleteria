@@ -52,11 +52,10 @@ const ItemDetailContainer = ({ match }) => {
 
     return (
         <>
-            <div className="ItemDetail">
-                {
-                    isLoading ? <Loading /> : <ItemDetail Item={data} />
-                }
-            </div>
+            {
+                isLoading ? <Loading /> : <ItemDetail Item={data} />
+            }
+
         </>
     );
 };
