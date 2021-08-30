@@ -8,6 +8,7 @@
  * react-bootstrap
  * semantic-UI
  * Axios
+ * prop-types
 
 # Getting Started with Create React App
 
