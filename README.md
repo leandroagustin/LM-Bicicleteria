@@ -7,6 +7,8 @@
  * react-router-dom
  * react-bootstrap
  * semantic-UI
+ * Axios
+ * Prop-types
 
 # Getting Started with Create React App
 
