@@ -7,6 +7,7 @@
  * react-router-dom
  * react-bootstrap
  * semantic-UI
+ * Axios
 
 # Getting Started with Create React App
 
