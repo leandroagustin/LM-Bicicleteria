@@ -30,6 +30,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             setProduct(0)
             console.log(`Cantidad de productos seleccionados: ${product}`);
         }
+        console.log(`Stock disponible (actualmente): ${nuevoStock}`);
     }
 
     return (
