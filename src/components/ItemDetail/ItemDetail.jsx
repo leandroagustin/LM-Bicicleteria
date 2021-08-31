@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './ItemDetail.css';
 import { Link } from 'react-router-dom';
 import { Button } from "react-bootstrap";
-const ItemDetail = ({ Item }) => {
+import { Card, Image } from 'semantic-ui-react';
+const ItemDetail = ({ Item, nuevoStock }) => {
 
     const [product, setProduct] = useState(0);
     //Creo la funcion onAdd
@@ -23,18 +24,41 @@ const ItemDetail = ({ Item }) => {
                     <span><b>Precio: € {Item.price}</b></span>
                 </div>
                 <div className='itemDetailItemCount'>
-                    <ItemCount
-                        stock="5"
-                        initial="0"
-                        onAdd={onAdd}
-                    />
-                    {product > 0 && (
-                        <Link to="/cart">
-                            <Button variant="dark" className="mx-2">
-                                Comprar ahora
-                            </Button>
-                        </Link>
-                    )}
+
+                    {product > 0 ? (
+                        <Card style={{
+                            height: '220px',
+                            width: '250px',
+                            margin: '50px 0 0 0'
+                        }}>
+                            <Card.Content>
+                                <Image
+                                    floated='right'
+                                    size='mini'
+                                    src={Item.image}
+                                />
+                                <Card.Header>{Item.title}</Card.Header>
+                                <Card.Meta>{Item.category}</Card.Meta>
+                                <Card.Description>
+                                    Cantidad de productos seleccionados: {product}
+                                </Card.Description>
+                            </Card.Content>
+                            <Card.Content extra>
+                                <div className='ui two buttons'>
+                                    <Link to="/cart">
+                                        <Button variant="dark" className="mx-2">
+                                            Comprar ahora
+                                        </Button>
+                                    </Link>
+                                </div>
+                            </Card.Content>
+                        </Card>
+                    ) :
+                        <ItemCount
+                            stock="5"
+                            initial="0"
+                            onAdd={onAdd}
+                        />}
                 </div>
             </div>
         </>

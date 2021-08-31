@@ -22,20 +22,20 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
 
     const add = () => {
-
         if (product > 0) {
             setProduct(product - nuevoStock);
+            setNuevoStock(nuevoStock - product)
             //Llamo como prop y uso la funcion onAdd
             onAdd(product);
             setProduct(0)
-            console.log(`Cantidad:${product}`);
+            console.log(`Cantidad de productos seleccionados: ${product}`);
         }
     }
 
     return (
-        <>  
+        <>
             <div className="btnContainer">
-                <p className="parrafoBtn">Stock disponible: {stock}</p>
+                <p className="parrafoBtn">Stock disponible: {nuevoStock}</p>
                 <Button
                     className="btn"
                     variant="outline-warning"
