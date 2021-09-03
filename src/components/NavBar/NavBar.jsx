@@ -2,11 +2,13 @@ import React from 'react'
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 //Semantic UI
-import { Button, Icon } from 'semantic-ui-react'
+
 //Bootstrap
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import CartWidget from '../CartWidget/CartWidget';
+  
 const NavBar = () => {
 
   return (
@@ -35,23 +37,11 @@ const NavBar = () => {
             to="/Contact"
             className='mx-3 mt-2'>Contact
           </Nav.Link>
-          <Button
-            animated='vertical'
-            to="/cart"
-            as={Link}
-          >
-            <Button.Content
-              hidden>
-              Carro
-            </Button.Content>
-            <Button.Content
-              visible>
-              <Icon
-                name='shop'
-                className='iconCartWidget'
-              />
-            </Button.Content>
-          </Button>
+
+          <Link to="/cart" className="cart-icon-md-sm text-decoration-none">
+            <CartWidget />
+          </Link>
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>

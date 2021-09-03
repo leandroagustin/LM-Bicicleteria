@@ -5,12 +5,19 @@ import './ItemDetail.css';
 import { Link } from 'react-router-dom';
 import { Button } from "react-bootstrap";
 import { Card, Image } from 'semantic-ui-react';
-const ItemDetail = ({ Item, nuevoStock }) => {
+//
+import { useCartContext } from '../../cart/CartContext';
+
+const ItemDetail = ({ Item }) => {
 
     const [product, setProduct] = useState(0);
+
+    const { addItemCart } = useCartContext();
+
     //Creo la funcion onAdd
     const onAdd = (p) => {
         setProduct(p);
+        addItemCart(Item, p)
     };
 
     return (
@@ -47,7 +54,7 @@ const ItemDetail = ({ Item, nuevoStock }) => {
                                 <div className='ui two buttons'>
                                     <Link to="/cart">
                                         <Button variant="dark" className="mx-2">
-                                            Comprar ahora
+                                            Comprar
                                         </Button>
                                     </Link>
                                 </div>

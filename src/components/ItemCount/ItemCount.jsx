@@ -3,6 +3,7 @@ import "./ItemCount.css";
 import { Button } from "react-bootstrap";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
+
     const [product, setProduct] = useState(Number(initial));
     const [nuevoStock, setNuevoStock] = useState(stock);
 
@@ -56,7 +57,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             <Button
                 className="btn"
                 variant="outline"
-                onClick={add}
+                onClick={() => add()}
             >
                 Agregar al carrito
             </Button>

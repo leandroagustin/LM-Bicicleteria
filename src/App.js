@@ -15,8 +15,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Cart from "./components/Cart/Cart";
 
+import { CartProvider } from "./cart/CartContext";
+
 const App = () => {
-    return (
+  return (
+    <CartProvider>
       <Router>
         <div className='App'>
         <NavBar/>
@@ -31,6 +34,7 @@ const App = () => {
           <Footer />
       </div>
       </Router>
+    </CartProvider>
     );
   }
 export default App;

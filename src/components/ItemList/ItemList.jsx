@@ -11,6 +11,7 @@ const ItemList = () => {
     const { categoryId } = useParams()
     const [products, SetProducts] = useState([]);
     const [IsLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         axios("https://fakestoreapi.com/products/").then((res) => {
             categoryId
