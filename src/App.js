@@ -14,8 +14,10 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Cart from "./components/Cart/Cart";
-
+//Context
 import { CartProvider } from "./cart/CartContext";
+// //Firebase
+// import { db } from "./firebase";
 
 const App = () => {
   return (

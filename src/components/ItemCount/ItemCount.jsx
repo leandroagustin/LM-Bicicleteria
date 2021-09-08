@@ -22,7 +22,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         }
     }
 
-    const add = () => {
+    const add = (product) => {
         if (product > 0) {
             setProduct(product - nuevoStock);
             setNuevoStock(nuevoStock - product)
@@ -57,7 +57,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             <Button
                 className="btn"
                 variant="outline"
-                onClick={() => add()}
+                onClick={() => add(product)}
             >
                 Agregar al carrito
             </Button>
