@@ -17,26 +17,26 @@ import Cart from "./components/Cart/Cart";
 //Context
 import { CartProvider } from "./cart/CartContext";
 // //Firebase
-// import { db } from "./firebase";
+import { db } from "./firebase";
 
 const App = () => {
   return (
     <CartProvider>
       <Router>
-        <div className='App'>
-        <NavBar/>
+        <div className="App">
+          <NavBar />
           <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/Category/:categoryId' component={ItemListContainer} />
-            <Route path='/Item/:id' component={ItemDetailContainer} />
-            <Route path='/About' component={About} />
-            <Route path='/Contact' component={Contact} />
-            <Route path='/Cart' component={Cart} />
+            <Route path="/" exact component={Home} />
+            <Route path="/Category/:categoryId" component={ItemListContainer} />
+            <Route path="/Item/:Id" component={ItemDetailContainer} />
+            <Route path="/About" component={About} />
+            <Route path="/Contact" component={Contact} />
+            <Route path="/Cart" component={Cart} />
           </Switch>
           <Footer />
-      </div>
+        </div>
       </Router>
     </CartProvider>
-    );
-  }
+  );
+};
 export default App;

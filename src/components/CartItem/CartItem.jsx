@@ -4,7 +4,7 @@ import { useCartContext } from "../../cart/CartContext";
 const CartItem = ({ Item }) => {
     const { removeItem } = useCartContext();
 
-    const PrecioTotal = (precio, cantidad) => {
+    const precioTotal = (precio, cantidad) => {
         return precio * cantidad;
     };
 
@@ -23,7 +23,7 @@ const CartItem = ({ Item }) => {
                 <td className="text-center">{Item.cantidad}</td>
                 <td className="text-center">
                     {
-                        PrecioTotal(Item.price, Item.cantidad)
+                        precioTotal(Item.price, Item.cantidad)
                     }
                 </td>
                 <td className="text-center">

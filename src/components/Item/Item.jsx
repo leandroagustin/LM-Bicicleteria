@@ -8,7 +8,7 @@ import propTypes from 'prop-types'
 const Item = ({ array }) => {
     return (
         <Card>
-            <Image className='cardImage' src={array.image} />
+            <Image className='cardImage' src={array.img} />
             <Card.Content className='card-Content'>
                 <Card.Header className='CardHeader'>{array.title}</Card.Header>
                 <Card.Description className='card-Description'>
@@ -23,7 +23,7 @@ const Item = ({ array }) => {
 };
 //Validacion de PropTypes
 Item.propTypes = {
-    image: propTypes.string,
+    img: propTypes.string,
     title: propTypes.string,
     category: propTypes.string,
     price: propTypes.number
