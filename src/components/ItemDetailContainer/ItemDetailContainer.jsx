@@ -8,7 +8,7 @@ import { db } from "../../firebase";
 import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
-  const { Id } = useParams();
+  const { Id } = useParams;
 
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -17,10 +17,10 @@ const ItemDetailContainer = () => {
     const obtenerDatos = async () => {
       const docs = [];
       const datos = await getDocs(collection(db, "productos"));
-      datos.forEach((documento) => {
-        docs.push({ ...documento.data() });
-        Id && setData(docs.filter((e) => e.id === Id));
+      datos.forEach((doc) => {
+        docs.push({ ...doc.data() });
       });
+      setData(docs.filter((e) => e.id === Id));
     };
     obtenerDatos();
     setTimeout(() => {

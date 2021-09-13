@@ -8,31 +8,32 @@ import { Card, Image } from "semantic-ui-react";
 //
 import { useCartContext } from "../../cart/CartContext";
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ Item }) => {
   const [product, setProduct] = useState(0);
+  console.log(Item);
 
   const { addItemCart } = useCartContext();
 
   //Creo la funcion onAdd
   const onAdd = (p) => {
     setProduct(p);
-    addItemCart(item, p);
+    addItemCart(Item, p);
   };
 
   return (
     <>
       <div className="itemDetail">
         <div className="itemDetailcontent">
-          <h1>{item.title}</h1>
+          <h1>{Item.title}</h1>
           <img className="itemDeailImg" src={Item.img} alt="Conor Java"></img>
           <p>
-            <b>Descripcion: </b> {item.descriptionSecondary}
+            <b>Descripcion: </b> {Item.descriptionSecondary}
           </p>
           <p>
-            <b>Categoria: {item.category}</b>
+            <b>Categoria: {Item.category}</b>
           </p>
           <span>
-            <b>Precio: € {item.price}</b>
+            <b>Precio: € {Item.price}</b>
           </span>
         </div>
         <div className="itemDetailItemCount">
@@ -45,9 +46,9 @@ const ItemDetail = ({ item }) => {
               }}
             >
               <Card.Content>
-                <Image floated="right" size="mini" src={item.image} />
-                <Card.Header>{item.title}</Card.Header>
-                <Card.Meta>{item.category}</Card.Meta>
+                <Image floated="right" size="mini" src={Item.img} />
+                <Card.Header>{Item.title}</Card.Header>
+                <Card.Meta>{Item.category}</Card.Meta>
                 <Card.Description>
                   Cantidad de productos seleccionados: {product}
                 </Card.Description>
