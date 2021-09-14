@@ -1,14 +1,16 @@
 # TopMega - ecommerce - React JS - CoderHouse.
- TopMega es un proyecto de ecommerce usando React JS. TopMega es una tienda de ropa y accesorios para hombre y mujeres, con la idea de vender estos productos de forma online. Esta tienda no tiene un espacio fisico, pero de ser posible, su ubicacion seria en Puerto Madryn, Chubut, Argentina. Este ecommerce Permite al usuario obtener una vista previa de los productos con detalles, seleccionar los productos que desea comprar, dentro de cada uno ver mas detalles del mismo y generar una orden de compra.
+
+TopMega es un proyecto de ecommerce usando React JS. TopMega es una tienda bicicletas para hombre y mujeres, con la idea de vender estos productos de forma online. Esta tienda no tiene un espacio fisico, pero de ser posible, su ubicacion seria en Puerto Madryn, Chubut, Argentina. Este e-commerce Permite al usuario obtener una vista previa de los productos con detalles, seleccionar los productos que desea comprar, dentro de cada uno ver mas detalles del mismo y generar una orden de compra.
 
 # Librerias que use en el proyecto:
 
- * react ^17.0.2
- * react-router-dom
- * react-bootstrap
- * semantic-UI
- * Axios
- * Prop-types
+- react ^17.0.2
+- react-router-dom
+- react-bootstrap
+- semantic-UI
+- Axios
+- Prop-types
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

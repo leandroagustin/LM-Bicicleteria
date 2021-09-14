@@ -19,8 +19,8 @@ const ItemList = () => {
     const obtenerDatos = async () => {
       const docs = [];
       const datos = await getDocs(collection(db, "productos"));
-      datos.forEach((documento) => {
-        docs.push({ ...documento.data() });
+      datos.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
         categoryId
           ? setProducts(docs.filter((e) => e.category === categoryId))
           : setProducts(docs);

@@ -16,7 +16,7 @@ const Cart = () => {
           <p>Tienes {totalItems} productos en el carrito</p>
           {totalItems > 0 ? (
             <>
-              <button onClick={clear} className="btn btn-info button-clear">
+              <button onClick={clear} className="btn btn-info button-clear border-light">
                 Limpiar Carrito
               </button>
               <div className="cart-items">

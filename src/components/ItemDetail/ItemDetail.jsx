@@ -10,7 +10,6 @@ import { useCartContext } from "../../cart/CartContext";
 
 const ItemDetail = ({ Item }) => {
   const [product, setProduct] = useState(0);
-  console.log(Item);
 
   const { addItemCart } = useCartContext();
 
@@ -25,7 +24,7 @@ const ItemDetail = ({ Item }) => {
       <div className="itemDetail">
         <div className="itemDetailcontent">
           <h1>{Item.title}</h1>
-          <img className="itemDetailImg" src={Item.img} alt="Conor Java"></img>
+          <img className="itemDeailImg" src={Item.img} alt="Conor Java"></img>
           <p>
             <b>Descripcion: </b> {Item.descriptionSecondary}
           </p>
