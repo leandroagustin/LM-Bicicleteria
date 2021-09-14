@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loading from "../Loading/Loading";
 //Firebase
-import { getDocs, collection } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const { Id } = useParams;
+  const { Id } = useParams();
 
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -17,8 +17,8 @@ const ItemDetailContainer = () => {
     const obtenerDatos = async () => {
       const docs = [];
       const datos = await getDocs(collection(db, "productos"));
-      datos.forEach((doc) => {
-        docs.push({ ...doc.data() });
+      datos.forEach((documento) => {
+        docs.push({ ...documento.data() });
       });
       setData(docs.filter((e) => e.id === Id));
     };
