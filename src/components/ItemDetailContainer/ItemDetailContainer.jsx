@@ -12,14 +12,12 @@ const ItemDetailContainer = () => {
 
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   const obtenerDatos = async () => {
     const docRef = doc(db, "productos", Id);
     const docSnap = await getDoc(docRef);
-
-    const prodId = docSnap.id; //id de mis productos
-    // console.log(prodId);
-    setData({ ...docSnap.data(), id: prodId });
+    console.log(docSnap.id);
+    setData({ ...docSnap.data(), id: docSnap.id });
   };
 
   useEffect(() => {
