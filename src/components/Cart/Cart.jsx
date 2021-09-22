@@ -3,10 +3,11 @@ import { useCartContext } from "../../cart/CartContext";
 //
 import { Link } from "react-router-dom";
 //import components
+import CartForm from "../../CartForm/CartForm";
 import CartItem from "../../components/CartItem/CartItem";
 
 const Cart = () => {
-  const { cart, clear, totalItems } = useCartContext();
+  const { cart, clear, totalItems, totalPrice } = useCartContext();
 
   return (
     <>
@@ -16,7 +17,10 @@ const Cart = () => {
           <p>Tienes {totalItems} productos en el carrito</p>
           {totalItems > 0 ? (
             <>
-              <button onClick={clear} className="btn btn-info button-clear border-light">
+              <button
+                onClick={clear}
+                className="btn btn-info button-clear border-light"
+              >
                 Limpiar Carrito
               </button>
               <div className="cart-items">
@@ -51,6 +55,22 @@ const Cart = () => {
                 </Link>
               </p>
             </>
+          )}
+          {totalItems > 0 && (
+            <div className="col-lg-4 col-md">
+              <p
+                style={{
+                  fontWeight: "800",
+                  fontSize: "x-large",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                Precio Total: ${totalPrice}
+              </p>
+              <div className="mr-lg-5">
+                <CartForm />
+              </div>
+            </div>
           )}
         </section>
       </div>
