@@ -62,7 +62,6 @@
 @media screen and (min-width: 425.8px) and (max-width: 768px) {
   .img {
     object-fit: cover;
-    height: 19rem;
     margin: 0;
     width: 100vw;
   }
@@ -126,6 +125,7 @@
     height: 50rem;
     width: 100vw;
     object-fit: cover;
+    margin: 0;
   }
 
   .bienvenida-h3 {
