@@ -15,7 +15,7 @@ const NavBar = () => {
       expand="container-fluid"
       bg="dark"
       variant="dark"
-      className="navBarContainer fixed-top px-4"
+      className="navBarContainer fixed-top"
     >
       <Navbar.Brand as={Link} to="/" className="brand mb-1">
         TopMega

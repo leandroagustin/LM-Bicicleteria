@@ -10,5 +10,7 @@
   .divCardContainer {
     justify-content: center;
     width: 100vw;
+    margin: 0;
+    padding: 0;
   }
 }

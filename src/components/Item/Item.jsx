@@ -9,11 +9,13 @@ const Item = ({ array }) => {
   return (
     <Card
       style={{
-        width: "18rem",
+        width: "95vw",
         height: "30rem",
-        margin: "30px 20px",
+        margin: "10px 5px",
         textAlign: "center",
+        textDecoration: "none",
       }}
+      className="card"
     >
       <Card.Img variant="top" className="cardImage 5" src={array.img} />
       <Card.Body>

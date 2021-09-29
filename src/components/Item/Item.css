@@ -17,3 +17,9 @@
   font-weight: 200;
   height: fit-content;
 }
+
+@media screen and (min-width: 280px) and (max-width: 320px) {
+  .card-title{
+    text-decoration: none;
+  }
+}
