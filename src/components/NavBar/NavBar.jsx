@@ -1,8 +1,7 @@
 import React from "react";
-import "./NavBar.css";
 import { Link } from "react-router-dom";
-//Semantic UI
-
+//Style
+import "./NavBar.css";
 //Bootstrap
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,12 +15,12 @@ const NavBar = () => {
       expand="container-fluid"
       bg="dark"
       variant="dark"
-      className="navBarContainer fixed-top px-3"
+      className="navBarContainer fixed-top px-4"
     >
-      <Navbar.Brand as={Link} to="/" className="brand mx-5 mb-1">
+      <Navbar.Brand as={Link} to="/" className="brand mb-1">
         TopMega
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="navbarScroll" />
+      <Navbar.Toggle aria-controls="navbarScroll" className="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav className="navBar" navbarScroll>
           <NavDropdown

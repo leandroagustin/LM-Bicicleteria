@@ -9,7 +9,7 @@ const ItemListContainer = ({ title }) => {
           ¡Bienvenidos mi tienda online!
         </h3>
         <Image
-          style={{ width: "600px" }}
+          style={{ width: "100vw" }}
           className="img"
           src="https://images.unsplash.com/photo-1524851037027-92da154aba10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
           alt="Bici"
