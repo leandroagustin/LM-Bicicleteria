@@ -37,13 +37,13 @@
 
 @media screen and (min-width: 280px) and (max-width: 320px) {
   .img {
-    object-fit: fill;
-    height: 20rem;
+    object-fit: cover;
+    height: 10rem;
     width: 100vw;
     margin: 0;
   }
   .bienvenida-h3 {
-    margin: 50px 0 0 0;
+    margin: 19px 0 0 0;
     font-size: 20px;
     color: #fff;
     width: 100vw;
