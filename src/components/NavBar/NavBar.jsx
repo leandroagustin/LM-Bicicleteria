@@ -13,10 +13,10 @@ const NavBar = () => {
   return (
     <Navbar
       collapseOnSelect
-      expand="lg"
+      expand="container-fluid"
       bg="dark"
       variant="dark"
-      className="navBarContainer"
+      className="navBarContainer fixed-top px-3"
     >
       <Navbar.Brand as={Link} to="/" className="brand mx-5 mb-1">
         TopMega

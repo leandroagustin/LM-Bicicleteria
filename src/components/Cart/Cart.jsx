@@ -3,8 +3,9 @@ import { useCartContext } from "../../cart/CartContext";
 //
 import { Link } from "react-router-dom";
 //import components
-import CartForm from "../../CartForm/CartForm";
 import CartItem from "../../components/CartItem/CartItem";
+//Estilo
+import "./Cart.css";
 
 const Cart = () => {
   const { cart, clear, totalItems, totalPrice } = useCartContext();
@@ -67,9 +68,9 @@ const Cart = () => {
               >
                 Precio Total: ${totalPrice}
               </p>
-              <div className="mr-lg-5">
-                <CartForm />
-              </div>
+              <button className="mr-lg-5">
+                <Link to="../../CartForm/CartForm.jsx">Continuar</Link>
+              </button>
             </div>
           )}
         </section>

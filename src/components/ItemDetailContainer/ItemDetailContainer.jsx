@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 //compoenentes
 import ItemDetail from "../ItemDetail/ItemDetail";
-import Loading from "../Loading/Loading";
+import Lottie from "../Lottie/Lottie";
 //Firebase
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -27,7 +27,24 @@ const ItemDetailContainer = () => {
     }, 1000);
   }, [Id]);
 
-  return <>{isLoading ? <Loading /> : <ItemDetail Item={data} />}</>;
+  return (
+    <>
+      {" "}
+      {isLoading ? (
+        <div
+          style={{
+            height: "520px",
+            width: "550px",
+            margin: "250px 668px",
+          }}
+        >
+          <Lottie />
+        </div>
+      ) : (
+        <ItemDetail Item={data} />
+      )}
+    </>
+  );
 };
 
 export default ItemDetailContainer;

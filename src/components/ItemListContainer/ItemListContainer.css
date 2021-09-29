@@ -1,23 +1,58 @@
 .greetingContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    align-content: space-around;
-     margin: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 25px;
+  margin: 0;
+  font-family: "Roboto";
+  font-weight: 100;
+  width: 130vw;
 }
 
-.greetingContainer h1{
-    top: 100px;
-    text-align: center;
-    padding: 15px 0;
+.itemListContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 20px 20px;
+  align-content: space-around;
 }
 
-.itemListContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 10px;
-    align-content: space-around;
+.img {
+  margin-top: 114px;
+  height: 50rem;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.bienvenida-h3 {
+  /* position: absolute;
+  bottom: 764px; */
+  font-size: 70px;
+  color: #fff;
+  width: 100vw;
+  font-family: "Roboto";
+  font-weight: 100;
+}
+
+@media screen and (max-width: 280px) {
+  .img {
+    object-fit: fill;
+    height: 20rem;
+    width: 100vw;
+    margin: 0;
+  }
+  .bienvenida-h3 {
+    margin: 50px 0 0 0;
+    font-size: 30px;
+    color: #fff;
+    width: 130vw;
+    font-family: "Roboto";
+    font-weight: 100;
+  }
+  .divContainer {
+    margin: 49px 0 0 0;
+    padding: 0;
+    width: 130vw;
+  }
 }

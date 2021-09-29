@@ -1,9 +1,13 @@
-.divCardContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin: 10px;
-    
+.divCardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 280px) {
+  .divCardContainer {
+    justify-content: center;
+  }
 }

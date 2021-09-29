@@ -2,20 +2,21 @@ import React from "react";
 import "./App.css";
 //components
 import NavBar from "./components/NavBar/NavBar";
-import "./components/NavBar/NavBar.css";
 import Footer from "./views/Footer/Footer";
+import CartForm from "./CartForm/CartForm";
 //Views
 import Home from "./views/Home/Home";
 import Contact from "./views/Contact/Contact";
 import About from "./views/About/About";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-//
 //React-Router-DOM
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Cart from "./components/Cart/Cart";
 //Context
 import { CartProvider } from "./cart/CartContext";
+//Style
+import "./components/NavBar/NavBar.css";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/About" component={About} />
             <Route path="/Contact" component={Contact} />
             <Route path="/Cart" component={Cart} />
+            <Route path="/CartForm" component={CartForm} />
           </Switch>
           <Footer />
         </div>

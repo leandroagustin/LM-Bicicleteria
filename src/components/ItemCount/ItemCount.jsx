@@ -39,7 +39,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <p className="parrafoBtn">Stock disponible: {nuevoStock}</p>
         <Button
           className="btn"
-          variant="outline-warning"
+          variant="outline-primary"
           onClick={Incrementar}
           disabled={product === Number(stock)}
         >
@@ -49,9 +49,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <p className="parrafoBtn">{product}</p>
         <Button
           className="btn"
-          variant="outline-warning"
+          variant="outline-primary"
           onClick={Decrementar}
-          disabled={product === 1}
+          disabled={product === 0}
         >
           {" "}
           Quitar

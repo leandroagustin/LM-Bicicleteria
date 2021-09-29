@@ -19,14 +19,14 @@
 .btn {
     border-radius: 12px;
     border: none;
-    background-color: rgb(255, 109, 51);
+    background-color: #48e;
     color: #fff;
-    border: 1px solid rgb(255, 109, 51);
+    border: 1px solid #48e;
     transition: all 0.7s;
     padding: 7px;
 }
 .btn:hover {
     background-color: #fff;
-    color: rgb(255, 109, 51);
-    border: 1px solid rgb(255, 109, 51);
+    color: #48e;
+    border: 1px solid #48e;
 }

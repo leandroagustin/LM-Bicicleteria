@@ -7,7 +7,7 @@ const Footer = () => {
         <span className="brand">TopMega</span>
       </div>
       <div className="d-flex flex-column text-start mt-3">
-        <p className="footer-text">Teléfono: 2932343223</p>
+        <p className="footer-text">Teléfono: 2804568365</p>
         <p className="footer-text">Email: topmega@hotmail.com</p>
       </div>
     </div>

@@ -23,10 +23,12 @@ const ItemDetail = ({ Item }) => {
     <>
       <div className="itemDetail">
         <div className="itemDetailcontent">
-          <h1>{Item.title}</h1>
           <img className="itemDeailImg" src={Item.img} alt="Conor Java"></img>
+        </div>
+        <div className="itemDetailItemCount">
+          <h1>{Item.title}</h1>
           <p>
-            <b>Descripcion: </b> {Item.descriptionSecondary}
+            <b>Descripcion: </b> {Item.description}
           </p>
           <p>
             <b>Categoria: {Item.category}</b>
@@ -34,13 +36,11 @@ const ItemDetail = ({ Item }) => {
           <span>
             <b>Precio: € {Item.price}</b>
           </span>
-        </div>
-        <div className="itemDetailItemCount">
           {product > 0 ? (
             <Card
               style={{
                 height: "220px",
-                width: "250px",
+                width: "130vw",
                 margin: "50px 0 0 0",
               }}
             >
@@ -62,8 +62,12 @@ const ItemDetail = ({ Item }) => {
                 </div>
               </Card.Content>
             </Card>
+          ) : Item.stock !== 0 ? (
+            <ItemCount stock={Item.stock} initial="0" onAdd={onAdd} />
           ) : (
-            <ItemCount stock="5" initial="0" onAdd={onAdd} />
+            <h1 className="mt-5 p-4 bg-primary" variant="outline-primary">
+              Lo sentimos! Este producto actualmente no tiene stock.
+            </h1>
           )}
         </div>
       </div>

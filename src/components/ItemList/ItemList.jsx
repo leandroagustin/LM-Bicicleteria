@@ -3,7 +3,7 @@ import Item from "../Item/Item";
 import "./ItemList.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 //Spinner
-import Loading from "../Loading/Loading";
+import Lottie from "../Lottie/Lottie";
 //React-Router-DOM
 import { Link, useParams } from "react-router-dom";
 //Firebase
@@ -29,7 +29,7 @@ const ItemList = () => {
     obtenerDatos();
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 2500);
   }, [categoryId]);
 
   return (
@@ -47,7 +47,7 @@ const ItemList = () => {
           })}
         </div>
       ) : (
-        <Loading />
+        <Lottie />
       )}
     </>
   );

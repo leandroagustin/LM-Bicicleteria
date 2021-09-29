@@ -1,14 +1,30 @@
-
 .navBar {
-    padding: 30px 0;
-    max-height: 100px;
-    font-size: 20px;
+  padding: 30px 0;
+  max-height: 100px;
+  font-size: 20px;
 }
 
 .navDropdown {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-.navBarContainer .brand{
-    font-size: 40px;
+.navBarContainer .brand {
+  font-size: 40px;
+}
+@media screen and (max-width: 280px) {
+  .navBarContainer {
+  padding: 30px;
+}
+  .navDropdown {
+    font-size: 25px;
+  }
+  .navBar {
+    padding: 10px 0;
+    max-height: 50px;
+    font-size: 22px;
+  }
+  .navBarContainer .brand {
+    font-size: 35px;
+    margin: 0;
+  }
 }

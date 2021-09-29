@@ -11,6 +11,15 @@ TopMega es un proyecto de ecommerce usando React JS. TopMega es una tienda bicic
 - Axios
 - Prop-types
 
+# Variables de Entorno:
+
+REACT_APP_FIREBASE_APIKEY=AIzaSyBDUqhjEr66m8izWHNc6A-Qefdn5JYIgOM
+REACT_APP_FIREBASE_AUTHDOMAIN=e-commerce-reactjs-2021.firebaseapp.com
+REACT_APP_FIREBASE_PROJECTID=e-commerce-reactjs-2021
+REACT_APP_FIREBASE_STORAGEBUCKET=e-commerce-reactjs-2021.appspot.com
+REACT_APP_FIREBASE_MESSAGINGSENDERID=111778998429
+REACT_APP_FIREBASE_APPID=1:111778998429:web:ac16743cfd004f7bd60c74
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

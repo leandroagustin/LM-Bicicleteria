@@ -1,0 +1,6 @@
+.ItemListContainer {
+  width: 130vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

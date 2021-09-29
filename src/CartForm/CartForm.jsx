@@ -4,6 +4,8 @@ import { db } from "../firebase";
 
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { useCartContext } from "../cart/CartContext";
+//Style
+import "./CartForm.css";
 
 const CartForm = () => {
   const { cart, totalPrice } = useCartContext();
@@ -42,66 +44,68 @@ const CartForm = () => {
   };
 
   return (
-    <>
-      <Form
-        className="d-flex flex-column justify-content-start"
-        onSubmit={handleSubmit}
-      >
-        <Form.Group className="mb-3" controlId="firstName">
-          <Form.Label>Nombre</Form.Label>
-          <Form.Control
-            type="text"
-            name="nombre"
-            placeholder="Ingresa aquí tu nombre"
-            onChange={handleInputChange}
-            value={form.nombre}
-          />
-        </Form.Group>
+    <div className="formContainer">
+      {" "}
+      {numDeCompra === "" ? (
+        <Form
+          className="d-flex flex-column justify-content-start"
+          onSubmit={handleSubmit}
+        >
+          <Form.Group className="mb-3" controlId="firstName">
+            <Form.Label>Nombre</Form.Label>
+            <Form.Control
+              type="text"
+              name="nombre"
+              placeholder="Ej: Leandro"
+              onChange={handleInputChange}
+              value={form.nombre}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="lastName">
-          <Form.Label>Apellido</Form.Label>
-          <Form.Control
-            type="text"
-            name="apellido"
-            placeholder="Ingresa aquí tu apellido"
-            onChange={handleInputChange}
-            value={form.apellido}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="lastName">
+            <Form.Label>Apellido</Form.Label>
+            <Form.Control
+              type="text"
+              name="apellido"
+              placeholder="Ej: Mena"
+              onChange={handleInputChange}
+              value={form.apellido}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="phone">
-          <Form.Label>Número de teléfono</Form.Label>
-          <Form.Control
-            type="text"
-            name="cel"
-            placeholder="Ingresa tu número de teléfono"
-            onChange={handleInputChange}
-            value={form.cel}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="phone">
+            <Form.Label>Número de teléfono</Form.Label>
+            <Form.Control
+              type="text"
+              name="cel"
+              placeholder="Ej: 2804568365"
+              onChange={handleInputChange}
+              value={form.cel}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="email">
-          <Form.Label>Dirección de Email</Form.Label>
-          <Form.Control
-            type="email"
-            name="email"
-            placeholder="Dirección de Email"
-            onChange={handleInputChange}
-            value={form.email}
-          />
-          <Form.Text className="text-muted">
-            Nunca compartiremos tu mail con nadie más
-          </Form.Text>
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="email">
+            <Form.Label>Dirección de Email</Form.Label>
+            <Form.Control
+              type="email"
+              name="email"
+              placeholder="Ej: leandromena_94@hotmail.com"
+              onChange={handleInputChange}
+              value={form.email}
+            />
+            <Form.Text className="text-muted">
+              Tu email nunca sera compartido.
+            </Form.Text>
+          </Form.Group>
 
-        <Button variant="warning" type="submit" className="align-center">
-          <b>Finalizar compra</b>
-        </Button>
-      </Form>
-      {numDeCompra !== "" && (
+          <Button variant="warning" type="submit" className="align-center">
+            <b>Finalizar compra</b>
+          </Button>
+        </Form>
+      ) : (
         <h3 className="h3">Este es su numero de compra: {numDeCompra}</h3>
       )}
-    </>
+    </div>
   );
 };
 

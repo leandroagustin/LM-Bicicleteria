@@ -1,23 +1,30 @@
 import React from "react";
-import { Card, Image } from "semantic-ui-react";
 import "./Item.css";
 
 // PropTypes
 import propTypes from "prop-types";
+import { Button, Card } from "react-bootstrap";
 
 const Item = ({ array }) => {
   return (
-    <Card>
-      <Image className="cardImage" src={array.img} />
-      <Card.Content className="card-Content">
-        <Card.Header className="CardHeader">{array.title}</Card.Header>
-        <Card.Description className="card-Description">
-          <span>{array.category}</span>
-        </Card.Description>
-        <Card.Description>
-          <p>Precio: € {array.price}</p>
-        </Card.Description>
-      </Card.Content>
+    <Card
+      style={{
+        width: "18rem",
+        height: "30rem",
+        margin: "30px 20px",
+        textAlign: "center",
+      }}
+    >
+      <Card.Img variant="top" className="cardImage 5" src={array.img} />
+      <Card.Body>
+        <Card.Title>{array.title}</Card.Title>
+        <Card.Text>{array.category}</Card.Text>
+        <Card.Text>
+          <span>Precio: € {array.price}</span>
+        </Card.Text>
+
+        <Button variant="primary">Detalles</Button>
+      </Card.Body>
     </Card>
   );
 };
