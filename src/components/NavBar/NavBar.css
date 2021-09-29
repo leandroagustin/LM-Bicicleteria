@@ -1,17 +1,4 @@
-.navBar {
-  padding: 30px 0;
-  max-height: 100px;
-  font-size: 20px;
-}
-
-.navDropdown {
-  font-size: 20px;
-}
-
-.navBarContainer .brand {
-  font-size: 40px;
-}
-@media screen and (min-width: 280px) and (max-width: 320px) {
+@media screen and (min-width: 280px) and (max-width: 425px) {
   .navBarContainer {
     padding: 0 19px;
     width: 100vw;
@@ -26,6 +13,58 @@
   }
   .navBarContainer .brand {
     font-size: 25px;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 425.2px) and (max-width: 768px) {
+  .navBarContainer {
+    padding: 0 60px;
+  }
+  .navDropdown {
+    font-size: 20px;
+  }
+  .navBar {
+    font-size: 20px;
+  }
+  .navBarContainer .brand {
+    font-size: 40px;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 768.2px) and (max-width: 1024px) {
+  .navBarContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+  }
+  .navDropdown {
+    font-size: 20px;
+  }
+  .navBar {
+    font-size: 20px;
+  }
+  .navBarContainer .brand {
+    font-size: 40px;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 1024.2px) {
+  .navBarContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 0 60px;
+  }
+  .navDropdown {
+    font-size: 20px;
+  }
+  .navBar {
+    font-size: 20px;
+  }
+  .navBarContainer .brand {
+    font-size: 40px;
     margin-left: 5px;
   }
 }

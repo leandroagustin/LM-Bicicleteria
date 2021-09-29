@@ -8,13 +8,6 @@ import { Button, Card } from "react-bootstrap";
 const Item = ({ array }) => {
   return (
     <Card
-      style={{
-        width: "95vw",
-        height: "30rem",
-        margin: "10px 5px",
-        textAlign: "center",
-        textDecoration: "none",
-      }}
       className="card"
     >
       <Card.Img variant="top" className="cardImage 5" src={array.img} />

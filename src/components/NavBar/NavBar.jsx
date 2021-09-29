@@ -15,13 +15,13 @@ const NavBar = () => {
       expand="container-fluid"
       bg="dark"
       variant="dark"
-      className="navBarContainer fixed-top"
+      className="navBarContainer fixed-top navbar-expand-lg"
     >
       <Navbar.Brand as={Link} to="/" className="brand mb-1">
         TopMega
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" className="navbarScroll" />
-      <Navbar.Collapse id="navbarScroll">
+      <Navbar.Collapse className="collapse" id="navbarScroll">
         <Nav className="navBar" navbarScroll>
           <NavDropdown
             title="Productos"
@@ -60,7 +60,10 @@ const NavBar = () => {
             Contact
           </Nav.Link>
 
-          <Link to="/cart" className="cart-icon-md-sm text-decoration-none">
+          <Link
+            to="/cart"
+            className="cart-icon-md-sm text-decoration-none px-3"
+          >
             <CartWidget />
           </Link>
         </Nav>

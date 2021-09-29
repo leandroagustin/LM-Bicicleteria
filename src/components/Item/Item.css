@@ -18,8 +18,39 @@
   height: fit-content;
 }
 
-@media screen and (min-width: 280px) and (max-width: 320px) {
-  .card-title{
+@media screen and (min-width: 280px) and (max-width: 425px) {
+  .card-title {
+    text-decoration: none;
+  }
+  .card {
+    width: 95vw;
+    height: 30rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: none;
+    align-content: center;
+  }
+}
+
+@media screen and (min-width: 425.8px) and (max-width: 768px) {
+  .card {
+    width: 40vw;
+    margin-bottom: 20px;
+  }
+  .cardImage {
+    height: 250px;
+  }
+}
+@media screen and (min-width: 768.2px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1024.2px) {
+  .card-title {
+    text-decoration: none;
+  }
+  .card {
+    height: 30rem;
+    margin: 20px 5px;
+    text-align: center;
     text-decoration: none;
   }
 }

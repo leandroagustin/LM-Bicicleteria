@@ -9,7 +9,7 @@ const CartWidget = () => {
 
   return (
     <>
-      <AiOutlineShoppingCart className="mt-3 text-light" />
+      <AiOutlineShoppingCart className="mt-4 text-light" />
       <span className="text-light">{totalItems}</span>
     </>
   );
