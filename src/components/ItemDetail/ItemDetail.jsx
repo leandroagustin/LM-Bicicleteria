@@ -39,15 +39,22 @@ const ItemDetail = ({ Item }) => {
           {product > 0 ? (
             <Card
               style={{
-                height: "220px",
-                width: "130vw",
+                height: "280px",
+                width: "333px",
                 margin: "50px 0 0 0",
               }}
             >
               <Card.Content>
-                <Image floated="right" size="mini" src={Item.img} />
-                <Card.Header>{Item.title}</Card.Header>
-                <Card.Meta>{Item.category}</Card.Meta>
+                <Image
+                  style={{
+                    height: "111px",
+                    width: "111px",
+                  }}
+                  size="mini"
+                  src={Item.img}
+                />
+                <Card.Header>Producto: {Item.title}</Card.Header>
+                <Card.Meta>Categoria: {Item.category}</Card.Meta>
                 <Card.Description>
                   Cantidad de productos seleccionados: {product}
                 </Card.Description>

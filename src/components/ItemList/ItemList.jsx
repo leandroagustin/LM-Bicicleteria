@@ -39,7 +39,10 @@ const ItemList = () => {
           {products.map((e) => {
             return (
               <div key={e.id}>
-                <Link to={`/Item/${e.id}`}>
+                <Link
+                  to={`/Item/${e.id}`}
+                  style={{ textDecoration: "none", color: "#000" }}
+                >
                   <Item array={e} />
                 </Link>
               </div>

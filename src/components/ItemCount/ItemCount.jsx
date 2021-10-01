@@ -36,7 +36,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <>
       <div className="btnContainer">
-        <p className="parrafoBtn">Stock disponible: {nuevoStock}</p>
+        <p className="parrafoBtn1">Stock disponible: {nuevoStock}</p>
         <Button
           className="btn"
           variant="outline-primary"
@@ -44,9 +44,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           disabled={product === Number(stock)}
         >
           {" "}
-          Agregar
+          +
         </Button>
-        <p className="parrafoBtn">{product}</p>
+        <p className="parrafoBtn2">{product}</p>
         <Button
           className="btn"
           variant="outline-primary"
@@ -54,12 +54,16 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           disabled={product === 0}
         >
           {" "}
-          Quitar
+          -
+        </Button>
+        <Button
+          className="bton btnAgregar"
+          variant="outline"
+          onClick={() => add(product)}
+        >
+          Agregar al carrito
         </Button>
       </div>
-      <Button className="btn" variant="outline" onClick={() => add(product)}>
-        Agregar al carrito
-      </Button>
     </>
   );
 };

@@ -12,12 +12,12 @@ const NavBar = () => {
   return (
     <Navbar
       collapseOnSelect
-      expand="container-fluid"
+      expand="lg"
       bg="dark"
       variant="dark"
       className="navBarContainer fixed-top navbar-expand-lg"
     >
-      <Navbar.Brand as={Link} to="/" className="brand mb-1">
+      <Navbar.Brand as={Link} to="/" className="navbar-brand d-flex brand mb-1">
         TopMega
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" className="navbarScroll" />
