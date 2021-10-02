@@ -6,12 +6,8 @@ import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { useCartContext } from "../cart/CartContext";
 //Style
 import "./CartForm.css";
-// FontAwesome Icon
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheckCircle,
-  faExclamationTriangle,
-} from "@fortawesome/free-solid-svg-icons";
+//Formik
+import { Formik } from "formik";
 
 const CartForm = () => {
   const { cart, totalPrice } = useCartContext();
@@ -28,21 +24,6 @@ const CartForm = () => {
     total: totalPrice,
   });
 
-  const validacion = () => {
-    if (/^[a-zA-ZÀ-ÿ\s]{1,10}$/.test(form.nombre)) {
-      console.log("nombre correcto");
-      return;
-    } else {
-      console.log("nombre Incorrecto");
-    }
-
-    if (validarEmail) {
-      validarEmail();
-    }
-  };
-
-  // Letras y espacios, pueden llevar acentos.
-
   const handleChange = (e) => {
     const value = e.target.value;
 
@@ -50,181 +31,184 @@ const CartForm = () => {
       ...form,
       [e.target.name]: value,
     });
-  };
-
-  const validarEmail = () => {
-    if (form.email.length > 0) {
-      if (form.email !== form.email2) {
-        console.log("las contrasenias no son iguales");
-      } else {
-        console.log("las contrasenias son iguales");
-      }
-    }
-  };
-  // const expresiones = {
-  //   nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-  //   apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-  //   email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-  //   email2: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-  //   cel: /^\d{7,14}$/, // 7 a 14 numeros.
-  // };
-
-  // const validacion = () => {
-  //   if (expresiones) {
-  //     if (expresiones.test(form.nombre)) {
-  //       console.log("Input Correcto");
-  //     } else {
-  //       console.log("Input Incorrecto");
-  //     }
-  //   }
-  // };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const docRef = await addDoc(collection(db, "compras"), form);
-      setNumDeCompra(docRef.id);
-
-      console.log("Numero de compra: ", docRef.id);
-    } catch (error) {
-      console.log(error);
-    }
     e.target.reset();
   };
 
   return (
     <div className="formContainer">
       {numDeCompra === "" ? (
-        <Form
-          className="d-flex flex-column justify-content-start"
-          onSubmit={handleSubmit}
+        <Formik
+          initialValues={form}
+          validate={() => {
+            let errors = {};
+            if (!form.nombre) {
+              errors.nombre = "Por favor ingresa un nombre";
+            } else if (!/^[a-zA-ZÀ-ÿ\s]{3,25}$/.test(form.nombre)) {
+              errors.nombre =
+                "El nombre tiene que ser de 3 a 25 digitos y solo puede contener letras y espacios";
+            }
+            if (!form.apellido) {
+              errors.apellido = "Por favor ingresa un apellido";
+            } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(form.apellido)) {
+              errors.apellido =
+                "El apellido tiene que ser de 3 a 25 digitos y solo puede contener letras y espacios.";
+            }
+            if (!form.cel) {
+              errors.cel = "Por favor ingresa un Número de teléfono";
+            } else if (!/^\d{7,14}$/.test(form.cel)) {
+              errors.cel =
+                "El Número de teléfono tiene que ser de 7 a 14 números";
+            }
+            if (!form.email) {
+              errors.email = "Por favor ingresa un email.";
+            } else if (
+              !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
+                form.email
+              )
+            ) {
+              errors.email =
+                "El email solo puede contener letras, puntos, guiones, guion bajo y números.";
+            }
+            //email2
+            if (!form.email2) {
+              errors.email2 = "Por favor ingresa un email.";
+            } else if (
+              !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
+                form.email2
+              )
+            ) {
+              errors.email2 =
+                "El email solo puede contener letras, puntos, guiones, guion bajo y números.";
+            } else if (form.email2 !== form.email) {
+              errors.email2 = "El email no coincide.";
+            }
+            return errors;
+          }}
+          onSubmit={async (valores, { resetForm }) => {
+            try {
+              const docRef = await addDoc(collection(db, "compras"), form);
+              setNumDeCompra(docRef.id);
+
+              console.log("Numero de compra: ", docRef.id);
+            } catch (error) {
+              console.log(error);
+            }
+            resetForm();
+          }}
+          handleSubmit={(e) => {
+            e.preventDefault();
+          }}
         >
-          <Form.Group className="mb-3" controlId="firstName">
-            <Form.Label className="label">Nombre</Form.Label>
-            <div className="grupoInput">
-              <Form.Control
-                type="text"
-                name="nombre"
-                placeholder="Ej: Leandro"
-                onChange={handleChange}
-                onKeyUp={validacion}
-                onBlur={validacion}
-                value={form.nombre}
-                className="input"
-              />
-              <FontAwesomeIcon
-                icon={faCheckCircle}
-                className="iconoValidacion"
-              />
-            </div>
-            <p className="leyendaError">Lorem ipsum dolor sit, amet.</p>
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="lastName">
-            <Form.Label className="label">Apellido</Form.Label>
-            <div className="grupoInput">
-              <Form.Control
-                type="text"
-                name="apellido"
-                placeholder="Ej: Mena"
-                onChange={handleChange}
-                onKeyUp={validacion}
-                onBlur={validacion}
-                value={form.apellido}
-                className="input"
-              />
-              <FontAwesomeIcon
-                icon={faCheckCircle}
-                className="iconoValidacion"
-              />
-            </div>
-            <p className="leyendaError">Lorem ipsum dolor sit, amet.</p>
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="phone">
-            <Form.Label className="label">Número de teléfono</Form.Label>
-            <div className="grupoInput">
-              <Form.Control
-                type="text"
-                name="cel"
-                placeholder="Ej: 2804568365"
-                onChange={handleChange}
-                onKeyUp={validacion}
-                onBlur={validacion}
-                value={form.cel}
-                className="input"
-              />
-              <FontAwesomeIcon
-                icon={faCheckCircle}
-                className="iconoValidacion"
-              />
-            </div>
-            <p className="leyendaError">Lorem ipsum dolor sit, amet.</p>
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="email">
-            <Form.Label className="label">Dirección de email</Form.Label>
-            <div className="grupoInput">
-              <Form.Control
-                type="email"
-                name="email"
-                placeholder="Ej: leandromena_94@hotmail.com"
-                onChange={handleChange}
-                onKeyUp={validacion}
-                onBlur={validacion}
-                value={form.email}
-                className="input"
-              />
-              <FontAwesomeIcon
-                icon={faCheckCircle}
-                className="iconoValidacion"
-              />
-            </div>
-            <p className="leyendaError">Lorem ipsum dolor sit, amet.</p>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="email">
-            <Form.Label className="label">Confirmacion de email</Form.Label>
-            <div className="grupoInput">
-              <Form.Control
-                type="email"
-                name="email2"
-                placeholder="Ej: leandromena_94@hotmail.com"
-                onChange={handleChange}
-                onKeyUp={validacion}
-                onBlur={validacion}
-                value={form.email2}
-                className="input"
-              />
-              <FontAwesomeIcon
-                icon={faCheckCircle}
-                className="iconoValidacion"
-              />
-            </div>
-            <p className="leyendaError">Lorem ipsum dolor sit, amet.</p>
-            <Form.Text className="text-muted">
-              Tu email nunca sera compartido.
-            </Form.Text>
-          </Form.Group>
-
-          <div className="contenedorBotonCentrado">
-            <Button
-              variant="primary"
-              type="submit"
-              className="align-center Boton"
+          {({ errors, touched, handleSubmit, handleBlur }) => (
+            <Form
+              autoComplete="off"
+              className="d-flex flex-column justify-content-start"
+              onSubmit={handleSubmit}
             >
-              <b>Finalizar compra</b>
-            </Button>
-            <p className="mensajeExito">Formulario enviado exitosamente!</p>
-          </div>
-          {false && (
-            <div className="mensajeError">
-              <p>
-                <FontAwesomeIcon icon={faExclamationTriangle} />
-                <b>Error:</b> Por favor completa el formulario correctamente
-              </p>
-            </div>
+              <Form.Group className="mb-3" controlId="firstName">
+                <Form.Label className="label">Nombre</Form.Label>
+                <div className="grupoInput">
+                  <Form.Control
+                    type="text"
+                    name="nombre"
+                    placeholder="Ej: Leandro"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={form.nombre}
+                    className="input"
+                  />
+                </div>
+                {touched.nombre && errors.nombre && (
+                  <div className="leyendaError">{errors.nombre}</div>
+                )}
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="lastName">
+                <Form.Label className="label">Apellido</Form.Label>
+                <div className="grupoInput">
+                  <Form.Control
+                    type="text"
+                    name="apellido"
+                    placeholder="Ej: Mena"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={form.apellido}
+                    className="input"
+                  />
+                </div>
+                {touched.apellido && errors.apellido && (
+                  <div className="leyendaError">{errors.apellido}</div>
+                )}
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="phone">
+                <Form.Label className="label">Número de teléfono</Form.Label>
+                <div className="grupoInput">
+                  <Form.Control
+                    type="text"
+                    name="cel"
+                    placeholder="Ej: 2804568365"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={form.cel}
+                    className="input"
+                  />
+                </div>
+                {touched.cel && errors.cel && (
+                  <div className="leyendaError">{errors.cel}</div>
+                )}
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="email">
+                <Form.Label className="label">Dirección de email</Form.Label>
+                <div className="grupoInput">
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    placeholder="Ej: leandromena_94@hotmail.com"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={form.email}
+                    className="input"
+                  />
+                </div>
+                {touched.email && errors.email && (
+                  <div className="leyendaError">{errors.email}</div>
+                )}
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="email">
+                <Form.Label className="label">Confirmacion de email</Form.Label>
+                <div className="grupoInput">
+                  <Form.Control
+                    type="email"
+                    name="email2"
+                    placeholder="Ej: leandromena_94@hotmail.com"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={form.email2}
+                    className="input"
+                  />
+                </div>
+                {touched.email2 && errors.email2 && (
+                  <div className="leyendaError">{errors.email2}</div>
+                )}
+                <Form.Text className="text-muted">
+                  Tu email nunca sera compartido.
+                </Form.Text>
+              </Form.Group>
+
+              <div className="contenedorBotonCentrado">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="align-center Boton"
+                >
+                  <b>Finalizar compra</b>
+                </Button>
+              </div>
+            </Form>
           )}
-        </Form>
+        </Formik>
       ) : (
         <h3 className="h3">Este es su numero de compra: {numDeCompra}</h3>
       )}

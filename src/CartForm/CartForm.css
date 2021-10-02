@@ -44,25 +44,15 @@
   outline: none;
 }
 .input:focus {
-  border: 3px solid #48e;
+  border: 2px solid #000;
   outline: none;
-  box-shadow: 3px 0px 30px rgb(66, 143, 240, 0.4);
+  box-shadow: 3px 2px 3px rgb(66, 143, 240);
 }
 
 .leyendaError {
   font-size: 12px;
   margin-bottom: 0;
-  color: #bb2929;
-  display: none;
-}
-
-.iconoValidacion {
-  position: absolute;
-  right: 10px;
-  bottom: 14px;
-  z-index: 110;
-  font-size: 16px;
-  opacity: 0;
+  color: #f66066;
 }
 
 .contenedorBotonCentrado {
