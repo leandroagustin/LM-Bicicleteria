@@ -49,7 +49,7 @@ const CartForm = () => {
             }
             if (!form.apellido) {
               errors.apellido = "Por favor ingresa un apellido";
-            } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(form.apellido)) {
+            } else if (!/^[a-zA-ZÀ-ÿ\s]{3,25}$/.test(form.apellido)) {
               errors.apellido =
                 "El apellido tiene que ser de 3 a 25 digitos y solo puede contener letras y espacios.";
             }
