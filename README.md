@@ -13,7 +13,7 @@ TopMega es un proyecto de ecommerce usando React JS. TopMega es una tienda bicic
 - Axios
 - Prop-types
 
-# Variables de Entorno:
+## Variables de Entorno:
 
 REACT_APP_FIREBASE_APIKEY=AIzaSyBDUqhjEr66m8izWHNc6A-Qefdn5JYIgOM
 REACT_APP_FIREBASE_AUTHDOMAIN=e-commerce-reactjs-2021.firebaseapp.com
