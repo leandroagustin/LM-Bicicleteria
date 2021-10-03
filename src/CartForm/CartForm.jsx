@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { db } from "../firebase";
+import { Link } from "react-router-dom";
 
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { useCartContext } from "../cart/CartContext";
@@ -10,7 +11,7 @@ import "./CartForm.css";
 import { Formik } from "formik";
 
 const CartForm = () => {
-  const { cart, totalPrice } = useCartContext();
+  const { cart, totalPrice, clear } = useCartContext();
   const [numDeCompra, setNumDeCompra] = useState("");
 
   const [form, setFormState] = useState({
@@ -31,7 +32,6 @@ const CartForm = () => {
       ...form,
       [e.target.name]: value,
     });
-    e.target.reset();
   };
 
   return (
@@ -88,12 +88,11 @@ const CartForm = () => {
             try {
               const docRef = await addDoc(collection(db, "compras"), form);
               setNumDeCompra(docRef.id);
-
-              console.log("Numero de compra: ", docRef.id);
             } catch (error) {
-              console.log(error);
+              return error;
             }
             resetForm();
+            clear();
           }}
           handleSubmit={(e) => {
             e.preventDefault();
@@ -210,7 +209,17 @@ const CartForm = () => {
           )}
         </Formik>
       ) : (
-        <h3 className="h3">Este es su numero de compra: {numDeCompra}</h3>
+        <>
+          <h3 className="h3 numDeCompra m-auto text-center">
+            Este es su numero de compra:
+          </h3>
+          <p className="text-center mb-5 h4 text-primary">{numDeCompra}</p>
+          <div className="m-auto">
+            <Link to="/" className="btonVolver">
+              Volver a Home
+            </Link>
+          </div>
+        </>
       )}
     </div>
   );

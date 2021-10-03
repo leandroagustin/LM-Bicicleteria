@@ -25,7 +25,7 @@
   .card {
     width: 95vw;
     height: 30rem;
-    margin-bottom: 20px;
+    margin: 30px 25px;
     text-align: center;
     text-decoration: none;
     align-content: center;
@@ -35,21 +35,25 @@
 @media screen and (min-width: 425.8px) and (max-width: 768px) {
   .card {
     width: 40vw;
-    margin-bottom: 20px;
+    margin: 30px 25px;
   }
   .cardImage {
     height: 250px;
   }
 }
 @media screen and (min-width: 768.2px) and (max-width: 1024px) {
+  .card {
+    width: 40vw;
+    margin: 30px 25px;
+  }
 }
 @media screen and (min-width: 1024.2px) {
   .card-title {
     text-decoration: none;
   }
   .card {
-    height: 30rem;
-    margin: 20px 5px;
+    height: 35rem;
+    margin: 30px 25px;
     text-align: center;
     text-decoration: none;
   }

@@ -106,11 +106,15 @@
     color: #fff;
     text-align: center;
     padding: 15px 0;
-    font-size: 30px;
-    margin: 0;
+    font-size: 40px;
+    margin-top: 70px;
     font-family: "Roboto";
     font-weight: 100;
     width: 100vw;
+  }
+  .divContainer {
+    margin-top: 0;
+    padding: 0;
   }
 
   .itemListContainer {
@@ -122,17 +126,30 @@
   }
 
   .img {
-    height: 50rem;
+    height: 30rem;
     width: 100vw;
     object-fit: cover;
+    object-position: center;
   }
 
-  .bienvenida-h3 {
+  /* .bienvenida-h3 {
     font-size: 75px;
-    color: #fff;
-    width: 100vw;
+    color: rgb(0, 0, 0);
+    width: 40vw;
     font-family: "Roboto";
     font-weight: 100;
-    margin: 90px 0 0 0;
+    margin: 40px 0 50px 700px;
+    background-color: rgba(73, 77, 75, 0.4);
   }
+  .bienvenida {
+    font-size: 30px;
+    color: #fff;
+    width: 7vw;
+    font-family: "Roboto";
+    font-weight: 100;
+    margin: 15px 0 15px 0;
+    background-color: #000;
+    border: 3px solid transparent;
+    border-radius: 7px;
+  } */
 }

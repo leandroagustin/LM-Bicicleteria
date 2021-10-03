@@ -72,9 +72,19 @@ const ItemDetail = ({ Item }) => {
           ) : Item.stock !== 0 ? (
             <ItemCount stock={Item.stock} initial="0" onAdd={onAdd} />
           ) : (
-            <h1 className="mt-5 p-4 bg-primary" variant="outline-primary">
-              Lo sentimos! Este producto actualmente no tiene stock.
-            </h1>
+            <>
+              <h1 className="h3 mt-5 p-2 sinStock" variant="outline-primary">
+                Lo sentimos! Este producto actualmente no tiene stock.
+              </h1>
+              <div className="mt-5 pt-5">
+                <span className="h4">Aquí hay mas de nuestros</span>{" "}
+                <span className="h4 btonProductos">
+                  <Link className="linkBtonProductos" to="/">
+                    productos
+                  </Link>
+                </span>
+              </div>
+            </>
           )}
         </div>
       </div>

@@ -17,7 +17,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       setProduct(product + 1);
       setNuevoStock(nuevoStock - 1);
     } else {
-      console.log("Stock agotado");
     }
   };
 
@@ -25,12 +24,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     if (product > 0) {
       setProduct(product - nuevoStock);
       setNuevoStock(nuevoStock - product);
-      //Llamo como prop y uso la funcion onAdd
       onAdd(product);
       setProduct(0);
-      console.log(`Cantidad de productos seleccionados: ${product}`);
     }
-    console.log(`Stock disponible (actualmente): ${nuevoStock}`);
   };
 
   return (

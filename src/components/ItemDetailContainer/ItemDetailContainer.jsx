@@ -16,7 +16,6 @@ const ItemDetailContainer = () => {
   const obtenerDatos = async () => {
     const docRef = doc(db, "productos", Id);
     const docSnap = await getDoc(docRef);
-    console.log(docSnap.id);
     setData({ ...docSnap.data(), id: docSnap.id });
   };
 

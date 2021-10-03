@@ -10,10 +10,17 @@
 .itemDetail {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 4px;
   padding: 20px;
   margin-top: 118px;
+}
+
+@media (max-width: 1254px) {
+  .itemDetail {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .itemDetailImg {
@@ -24,7 +31,7 @@
 }
 
 .itemDetailcontent {
-  width: 600px;
+  width: 400px;
   padding: 100px;
 }
 
@@ -39,5 +46,18 @@
 }
 
 .itemDetailItemCount {
-  padding: 100px;
+  padding: 50px;
+  width: 500px;
+}
+
+.sinStock {
+  background: #f66066;
+}
+
+.btonProductos {
+  color: #48e;
+}
+
+.linkBtonProductos {
+  text-decoration: none;
 }

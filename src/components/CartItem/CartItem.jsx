@@ -1,5 +1,7 @@
 import React from "react";
 import { useCartContext } from "../../cart/CartContext";
+//Style
+import "./CartItem.css";
 
 const CartItem = ({ Item }) => {
   const { removeItem } = useCartContext();
@@ -13,7 +15,7 @@ const CartItem = ({ Item }) => {
       <tr>
         <td>
           <img
-            className="img-fluid w-100 text-center img-cart-item"
+            className="img-fluid w-50 text-center img-cart-item"
             src={Item.img}
             alt={Item.title}
           ></img>

@@ -32,7 +32,6 @@ module.exports = {
     "no-trailing-spaces": "off",
     "new-cap": "off",
     "no-unused-vars": "error",
-    "no-console": "off",
     "prefer-const": "off",
     indent: "off",
   },
