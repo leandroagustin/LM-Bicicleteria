@@ -1,4 +1,4 @@
-###![2021-10-02 21-13-01](https://user-images.githubusercontent.com/83736506/135736143-59478da4-863f-4c17-8668-154a152c257f.gif)
+![2021-10-02 21-13-01](https://user-images.githubusercontent.com/83736506/135736143-59478da4-863f-4c17-8668-154a152c257f.gif)
 
 # TopMega - ecommerce - React JS - CoderHouse.
 
