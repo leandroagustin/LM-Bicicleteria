@@ -25,11 +25,9 @@ const ItemList = () => {
           ? setProducts(docs.filter((e) => e.category === categoryId))
           : setProducts(docs);
       });
+      setIsLoading(false);
     };
     obtenerDatos();
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
   }, [categoryId]);
 
   return (

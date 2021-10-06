@@ -23,6 +23,9 @@ const NavBar = () => {
       <Navbar.Toggle aria-controls="navbarScroll" className="navbarScroll" />
       <Navbar.Collapse className="collapse" id="navbarScroll">
         <Nav className="navBar" navbarScroll>
+          <Nav.Link as={Link} to="/" className="mx-3 mt-2">
+            Home
+          </Nav.Link>
           <NavDropdown
             title="Productos"
             id="navbarScrollingDropdown"
@@ -53,13 +56,6 @@ const NavBar = () => {
               Paseo
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link as={Link} to="/About" className="mx-3 mt-2">
-            About
-          </Nav.Link>
-          <Nav.Link as={Link} to="/Contact" className="mx-3 mt-2">
-            Contact
-          </Nav.Link>
-
           <Link
             to="/cart"
             className="cart-icon-md-sm text-decoration-none px-3"

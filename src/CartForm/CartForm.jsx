@@ -69,7 +69,7 @@ const CartForm = () => {
               errors.email =
                 "El email solo puede contener letras, puntos, guiones, guion bajo y números.";
             }
-            //email2
+            //emailConfirmacion
             if (!form.email2) {
               errors.email2 = "Por favor ingresa un email.";
             } else if (

@@ -17,13 +17,11 @@ const ItemDetailContainer = () => {
     const docRef = doc(db, "productos", Id);
     const docSnap = await getDoc(docRef);
     setData({ ...docSnap.data(), id: docSnap.id });
+    setIsLoading(false);
   };
 
   useEffect(() => {
     obtenerDatos();
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
   }, [Id]);
 
   return (
